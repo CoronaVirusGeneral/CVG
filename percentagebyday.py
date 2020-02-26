@@ -47,7 +47,7 @@ day10inc = day10 / day9
 day11inc = day11 / day10
 day12inc = day12 / day11
 day13inc = day13 / day12
-day14inc = day14 / day15
+day14inc = day14 / day13
 day15inc = day15 / day14
 day16inc = day16 / day15
 day17inc = day17 / day16
@@ -144,10 +144,31 @@ print('Day 34 (Feb 24) increase' , day34inc)
 print('Day 35 (Feb 25) increase' , day35inc)
 print('Day 36 (Feb 26) increase' , day36inc)
 print('Average Increase: ' , avinc)
-print('Total: \n' , day36)
 y = [day2inc,day3inc,day4inc,day5inc,day6inc,day7inc,day8inc,day9inc,day10inc,day11inc,day12inc,day13inc,day14inc,day15inc,day16inc,day17inc,day18inc,day19inc,day20inc,day21inc,day22inc,day23inc,day24inc,day25inc,day26inc,day27inc,day28inc,day29inc,day30inc,day31inc,day32inc,day33inc,day34inc,day35inc,day36inc]
 y2 = [adjinc2,adjinc3,adjinc4,adjinc5,adjinc6,adjinc7,adjinc8,adjinc9,adjinc10,adjinc11,adjinc12,adjinc13,adjinc14,adjinc15,adjinc16,adjinc17,adjinc18,adjinc19,adjinc20,adjinc21,adjinc22,adjinc23,adjinc24,adjinc25,adjinc26,adjinc27,adjinc28,adjinc29,adjinc30,adjinc31,adjinc32,adjinc33,adjinc34,adjinc35,adjinc36]
 x = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35]
+maxinc = max(y)
+mininc = min(y)
+print('highest delta for spread of infection', maxinc)
+print('lowest delta for spread of infection' , mininc)
+people = 1
+day = 0
+while ( people < 7500000000):
+    day = day + 1
+    people = people * mininc
+print('at the minimum growth rate of' , mininc , 'we gotta bout' , day , 'days')
+people = 1
+day = 0
+while ( people < 7500000000):
+    day = day + 1
+    people = people * maxinc
+print('at the maximum growth rate of' , maxinc , 'we gotta bout' , day , 'days')
+people = 1
+day = 0
+while ( people < 7500000000):
+    day = day + 1
+    people = people * avinc
+print('at the average growth rate of' , avinc , 'we gotta bout' , day , 'days')
 plt.plot(x, y, label = "reported values")
 plt.plot(x, y2, label = "in respect to average change")
 plt.ylabel('rate of increase in respect to previous day')
